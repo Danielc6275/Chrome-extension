@@ -1,4 +1,5 @@
 let myLeads = [];
+//This variable is important
 
 // Exercise:
 // myLeads = JSON.parse(myLeads);
@@ -42,13 +43,16 @@ tabBtn.addEventListener('click', function () {
         console.log(tabs);
         
         myLeads.push(tabs[0].url);
+        // I THINK what this implies is that the first item in the tabs array
+        // (and probably the only item in the array)
+        // is an object, and inside the object is a value called 'url'.
         localStorage.setItem("myLeads", JSON.stringify(myLeads));
         render(myLeads);
     })
 
 });
 
-
+// This function makes what happens in Javascript viewable in the HTML!
 function render(leads) {
     let listItems = "";
     for (i = 0; i < leads.length; i++) {
